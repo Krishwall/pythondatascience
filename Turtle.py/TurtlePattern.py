@@ -17,7 +17,5 @@ while True:
     for i in range(50):
         fd(i*2+5)
         rt(60)
-    
-    
 
 mainloop()    

@@ -11,7 +11,6 @@ t.shapesize(5,5,5)
 t.color("red","lime")
 t.begin_fill()
 
-
 for i in range(1,n+1):
   t.fd(100)
   t.lt(360/n)
