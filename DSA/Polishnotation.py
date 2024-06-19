@@ -9,7 +9,7 @@ def polish(exp):
     for i in range(0,len(list1)):
         print(i) 
         k=len(stack)
-        if(list1[i]==')'):
+        if(list1[i]==')'):  # cHECKS FOR CLOSING BRACKETS
             print(' ) encountered')
             if len(stack)>0:
               while(stack[-1]!='('):
@@ -24,11 +24,12 @@ def polish(exp):
                     break
               if stack[-1]=='(':
                   stack.pop()
-        elif(list1[i].isalpha()==True)       :
-            nexp.append(list1[i])    
+        elif(list1[i].isalpha()==True)  :# CHECKS IF THE ELEMENT IS ALPHABET
+            nexp.append(list1[i]) 
+               
         elif len(stack)>0:
 
-            if (stack[-1]=='*' or stack[-1]=='/') and (list1[i]=='+' or list1[i]=='-'):
+            if (stack[-1]=='*' or stack[-1]=='/') and (list1[i]=='+' or list1[i]=='-'):# CHECKS FOR PRECEDENCE
 
               print("here")
 
