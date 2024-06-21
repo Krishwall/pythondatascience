@@ -1,4 +1,5 @@
-
+import time
+st=time.perf_counter()
 def polish(exp):
     list1=[]
     list1=list(exp)
@@ -17,9 +18,7 @@ def polish(exp):
             
                 nexp.append(stack.pop())
                 k-=1
-                
-                print(stack)
-                print(nexp)       
+                      
                 if len(stack)<=1:
                     break
               if stack[-1]=='(':
@@ -36,17 +35,12 @@ def polish(exp):
               nexp.append(stack.pop())
             stack.append(list1[i])  
         else :
-             stack.append(list1[i])   
-        print(list1) 
-        print(stack)
-        print(nexp)
-       
-       
-        
+             stack.append(list1[i])        
     print(list1)
     print(stack)
     print(nexp)
     return(' '.join(nexp))
 
 print(polish('(A*(B+((C+D)*(E+F))/G))*H'))
-
+et=time.perf_counter()
+print(et-st)
