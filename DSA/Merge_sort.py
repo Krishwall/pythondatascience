@@ -49,8 +49,7 @@ def main():
    array=[3,5,2,6,5,8,9,1,4]
    print(array)
    merge_sort(array)
-   for i in range(0,len(array)):
-      print(array[i],end=",")
+   print(array)
 st=time.perf_counter()
 main()
 et=time.perf_counter()
