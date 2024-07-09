@@ -9,7 +9,8 @@ years = list(map(str, range(1980, 2014)))
 
 @st.cache_data
 def load_data():
-    df = pd.read_excel("dataanalysis\Canada.xlsx", sheet_name=1, skiprows=20, skipfooter=2)
+    df = pd.read_excel("Canada.xlsx", sheet_name=1, skiprows=20, skipfooter=2)
+    
     
     cols_to_rename ={
     'OdName': 'Country',
