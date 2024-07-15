@@ -9,8 +9,8 @@ years = list(map(str, range(1980, 2014)))
 
 @st.cache_data
 def load_data():
-    df = pd.read_excel("Canada.xlsx", sheet_name=1, skiprows=20, skipfooter=2)
-    
+    df = pd.read_excel(r"dataanalysis\Canada.xlsx", sheet_name=1, skiprows=20, skipfooter=2)
+
     
     cols_to_rename ={
     'OdName': 'Country',
@@ -39,8 +39,16 @@ countries = df.index.tolist()
 selected_country = st.selectbox("Select a country", 
     countries)
 imm_data = df.loc[selected_country, years]
-# st.write(imm_data)
-fig = px.area(imm_data,
+st.write(imm_data)
+st.balloons()
+st.button("Reset", type="primary")
+if st.button("Say hello"):
+     st.write("Why hello there")
+else:
+     st.write("Goodbye")
+if st.checkbox("have you run the data?"):
+    st.write("VV good")
+fig = px.area(imm_data,  # px.line for line graph   px.bar for bar graph
     x=imm_data.index,
     y=imm_data.values)
 st.plotly_chart(fig, use_container_width=True)
