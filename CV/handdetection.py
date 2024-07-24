@@ -37,7 +37,7 @@ with hands.Hands() as detector:
 
                 ix=int(idx_finger.x*w)
                 iy=int(idx_finger.y*h)
-                cv2.circle(frame,(ix,iy),25,(255,255,0),5)
+                cv2.circle(frame,(ix,iy),25,(255,255,0),20)
                 cv2.putText(frame," Click Here", (ix-100, iy-50),
                             cv2.FONT_HERSHEY_SIMPLEX,1,
                             (255,255,0),2)
@@ -48,7 +48,8 @@ with hands.Hands() as detector:
 
         if cv2.waitKey(10) == 32:  
                             break
-        cv2.imshow("hand  detection",frame)
+        cv2.imshow("hand  detection",cv2.flip(frame,1))
+
 
        
         
