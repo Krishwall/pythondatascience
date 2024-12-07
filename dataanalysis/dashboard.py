@@ -74,7 +74,7 @@ max_year=immig.idxmax()
 c2.metric(f"Max Immigration for {country}",
           f"{max_immig_for_country/1000 :.2f}K",
           f"{max_year}")
-c1,c2=st.columns(2)
+c1,c2=st.columns([5,2])
 c1.plotly_chart(fig2,use_container_width=True)
 c2.plotly_chart(figtop10,use_container_width=True)
 
