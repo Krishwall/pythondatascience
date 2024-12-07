@@ -8,7 +8,7 @@ while True:
         break
 
     cv2.imshow("video frame",frame)
-    if cv2.waitKey(1)==32:
+    if cv2.waitKey(100)==32:
         break
 
 video.release()

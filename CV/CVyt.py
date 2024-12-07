@@ -22,7 +22,7 @@ def  draw_lines(img,lines):
 
     for line in lines:
         for x1,y1,x2,y2 in line:
-            cv2.line(blank_image,(x1,y1),(x2,y2),(0,255,0),4) # 5 is the thickness of the line
+            cv2.line(blank_image,(x1,y1),(x2,y2),(0,255,0),) # 5 is the thickness of the line
 
     img=cv2.addWeighted(img,0.8,blank_image,1,0.0) # overlaps 1 image on top of another 0.8  is the transparency of the image
     return img
@@ -50,4 +50,6 @@ lines=cv2.HoughLinesP(cropped_image,
 image_with_lines=draw_lines(image,lines)
 print(lines)
 plt.imshow(image_with_lines)
+plt.imshow(canny_image)
+
 plt.show()
